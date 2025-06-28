@@ -71,3 +71,10 @@ Reusable layout components
 Properly structured property data
 Functional filter components
 Visually appealing UI with consistent styling
+
+0. Develop Responsive Booking Detail Page with User Input and Payment Processing
+Objective:
+
+In this milestone, you will implement the Booking Detail Page based on the provided mockup. The page should allow users to enter their contact and payment details, review their booking information, and confirm the booking. This page will be responsive and styled using Tailwind CSS.
+
+By the end of this milestone, you will have created a functional and responsive booking page where users can input details and proceed with the booking process.

@@ -1,4 +1,8 @@
+import { useRouter } from 'next/router';
+
 const BookingSection: React.FC<{ price: number }> = ({ price }) => {
+  const router = useRouter();
+
   return (
     <div className="bg-white p-6 shadow-md rounded-lg">
       <h3 className="text-xl font-semibold">${price}/night</h3>
@@ -13,11 +17,16 @@ const BookingSection: React.FC<{ price: number }> = ({ price }) => {
 
       {/* Total payment */}
       <div className="mt-4">
-        <p>Total payment: <strong>${price * 7}</strong></p>
-      </div>
-
-      {/* Reserve button */}
-      <button className="mt-4 bg-green-500 text-white py-2 px-4 rounded-md">Reserve now</button>
+      <button
+        className="mt-4 bg-green-500 text-white py-2 px-4 rounded-md cursor-pointer"
+        onClick={() => {
+          // Use Next.js router for client-side navigation
+          router.push('/booking');
+        }}
+      >
+        Reserve now
+      </button>
+    </div>
     </div>
   );
 };
