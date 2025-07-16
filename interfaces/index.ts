@@ -24,6 +24,18 @@ export interface PropertyProps {
   image: string[];
   discount?: string; // Optional, as not all properties may have a discount
   description?: string; // Optional, as not all properties may have a description
+  placeOffer?: {
+      icon: string[],
+      text: string[]
+    }
+  reviews?: {
+    avatar: string;
+    name: string;
+    data: string;
+    years: number;
+    rating: number;
+    comment: string;
+  }[];
 }
 
 export interface PropertyType {

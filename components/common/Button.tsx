@@ -9,7 +9,7 @@ export const Button = ({ text, className, icon, onClick }: ButtonProps) => {
       className={`${className} cursor-pointer`}
       onClick={onClick}
     >
-      {icon && <Image src={icon} alt="Icon" width={15} height={15} />} {text}
+      {icon && <Image src={icon} alt="Icon" width={15} height={15} className="w-5 h-5" />} {text}
     </button>
   );
 };
