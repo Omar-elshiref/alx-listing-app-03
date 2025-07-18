@@ -3,6 +3,7 @@ export type ButtonProps = {
   className?: string;
   onClick?: () => void;
   icon?: string;
+  classNameIcon?: string;
 };
 
 export interface PropertyProps {

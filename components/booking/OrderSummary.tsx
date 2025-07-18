@@ -5,16 +5,28 @@ type BookingDetails = {
   totalNights: number;
   bookingFee: number;
   price: number;
+  propertyId: string;
+  image: string;
 };
 
 const OrderSummary: React.FC<{ bookingDetails: BookingDetails }> = ({ bookingDetails }) => (
-  <div className="bg-white p-6 shadow-md rounded-lg">
+  <div className="bg-white p-6 shadow-md rounded-lg h-fit order-1 md:order-2">
     <h2 className="text-xl font-semibold">Review Order Details</h2>
-    <div className="flex items-center mt-4">
-      <Image src="/assets/Image1.png" alt="Property" className="w-32 h-32 object-cover rounded-md" width={400} height={400} />
-      <div className="ml-4">
+    <div className="flex flex-col mt-4">
+      <div className="w-full xl:h-70">
+              <Image src={bookingDetails.image} alt={bookingDetails.propertyName} className="w-full h-full  aspect-square rounded-md" width={400} height={400} />
+      </div>
+      <div className="flex flex-col mt-4  gap-2">
         <h3 className="text-lg font-semibold">{bookingDetails.propertyName}</h3>
-        <p className="text-sm text-gray-500">4.76 (345 reviews)</p>
+        <div className="text-sm text-gray-500 flex items-center gap-2">
+          <span>{
+                        <Image
+                          src='/assets/Star2.svg'
+                          alt='Star'
+                          width={20}
+                          height={20}
+                          className='w-5 h-5'
+                        />}</span>  <span>4.76 (345 reviews)</span></div>
         <p className="text-sm text-gray-500">{bookingDetails.startDate} • {bookingDetails.totalNights} Nights</p>
       </div>
     </div>

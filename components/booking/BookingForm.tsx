@@ -1,7 +1,8 @@
+import Button from "../common/Button";
 import CancellationPolicy from "./CancellationPolicy";
 
 const BookingForm = () => (
-  <div className="bg-white p-6 shadow-md rounded-lg">
+  <div className="bg-white p-6 shadow-md rounded-lg xl:col-span-2 order-2 md:order-1">
     <h2 className="text-xl font-semibold">Contact Detail</h2>
     <form>
       {/* Contact Information */}
@@ -71,9 +72,7 @@ const BookingForm = () => (
       </div>
 
       {/* Submit Button */}
-      <button className="mt-6 bg-green-500 text-white py-2 px-4 rounded-md w-full">
-        Confirm & Pay
-      </button>
+      <Button text="Confirm & Pay" className="mt-6 bg-green-500 text-white py-2 px-4 rounded-md w-full" />
     </form>
     <CancellationPolicy />
   </div>

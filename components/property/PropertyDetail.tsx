@@ -16,9 +16,7 @@ import "swiper/css/navigation";
 // import required modules
 import { Pagination } from "swiper/modules";
 
-const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
-  property,
-}) => {
+const PropertyDetail: React.FC<{ property: PropertyProps }> = ({property}) => {
   const [activeTab, setActiveTab] = useState("Description");
   const [showMore, setShowMore] = useState(false);
   const [expanded, setExpanded] = useState(false);
@@ -468,7 +466,7 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
           </div>
         </div> */}
         </div>
-        <BookingSection price={property.price} />
+        <BookingSection property={property} />
       </div>
       
       {/* booking section for mobile */}
@@ -487,7 +485,17 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
             
 
       </div>
-              <Button text="Reserve now" className=" bg-[#34967C] text-white py-2 px-4 rounded-md " onClick={() => {}} />
+              <Button text="Reserve now" className=" bg-[#34967C] text-white py-2 px-4 rounded-md " onClick={() => {
+    router.push({
+      pathname: "/booking",
+      query: {
+        name: property.name,
+        price: property.price,
+        id: property.id,
+        image: property.image[0],
+      },
+    });
+  }} />
       </div>
     </div>
   );
